@@ -23,8 +23,8 @@ echo "⏱️  Uptime          : $(uptime -p)"
 # CPU Info
 CPU_MODEL=$(lscpu | grep "Model name" | cut -d: -f2 | xargs)
 CPU_CORES=$(nproc)
-echo "🧠 CPU             : $CPU_MODEL"
-echo "🧠 CPU Cores       : $CPU_CORES vCores"
+echo "🧠 CPU Processer   : $CPU_MODEL"
+echo "⚡ CPU Cores       : $CPU_CORES vCores"
 
 # RAM
 RAM_TOTAL=$(free -h | awk '/Mem:/ {print $2}')
