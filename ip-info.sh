@@ -17,7 +17,6 @@ country=$(curl -s http://ip-api.com/json/$ipv4 | grep -oP '"country":"\K[^"]+')
 # Latency check
 latency=$(ping -c 1 1.1.1.1 | grep 'time=' | awk -F'time=' '{print $2}' | awk '{print $1}')
 
-################################
 echo "📡 IPv4 Section"
 echo "--------------------------------"
 
@@ -38,7 +37,6 @@ else
     echo "🏷️ Type   : None"
 fi
 
-################################
 echo ""
 echo "🛰️ IPv6 Section"
 echo "--------------------------------"
@@ -60,7 +58,6 @@ else
     echo "🏷️ Type   : None"
 fi
 
-################################
 echo ""
 echo "📍 Location"
 echo "--------------------------------"
@@ -71,7 +68,6 @@ else
     echo "❓ Unknown"
 fi
 
-################################
 echo ""
 echo "⚡ Latency"
 echo "--------------------------------"
@@ -82,4 +78,15 @@ else
 fi
 
 echo ""
+echo "🚀 Internet Speed"
+echo "--------------------------------"
+# check if speedtest-cli is installed
+if command -v speedtest-cli >/dev/null 2>&1; then
+    speedtest-cli --simple
+else
+    echo "❌ speedtest-cli not installed. Install it using: sudo apt install speedtest-cli"
+fi
+
+echo ""
 echo "==============================="
+read -p "Press Enter to close..."
