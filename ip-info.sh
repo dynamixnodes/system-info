@@ -69,7 +69,7 @@ else
 fi
 
 echo ""
-echo "⚡ Latency & Internet Speed"
+echo "⚡ Latency"
 echo "--------------------------------"
 if [[ -n "$latency" ]]; then
     echo "📶 Ping : ${latency} ms"
