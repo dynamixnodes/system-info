@@ -76,10 +76,6 @@ if [[ -n "$latency" ]]; then
 else
     echo "❌ Unable to measure"
 fi
-
-echo ""
-echo "🚀 Internet Speed"
-echo "--------------------------------"
 # check if speedtest-cli is installed
 if command -v speedtest-cli >/dev/null 2>&1; then
     speedtest-cli --simple
