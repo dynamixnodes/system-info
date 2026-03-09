@@ -69,14 +69,15 @@ else
 fi
 
 echo ""
-echo "⚡ Latency"
+echo "⚡ Latency & Internet Speed"
 echo "--------------------------------"
 if [[ -n "$latency" ]]; then
     echo "📶 Ping : ${latency} ms"
 else
-    echo "❌ Unable to measure"
+    echo "❌ Unable to measure latency"
 fi
-# check if speedtest-cli is installed
+
+# Internet speed
 if command -v speedtest-cli >/dev/null 2>&1; then
     speedtest-cli --simple
 else
